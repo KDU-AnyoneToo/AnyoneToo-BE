@@ -1,4 +1,4 @@
-package org.anyonetoo.anyonetoo.domain.entity;
+package org.anyonetoo.anyonetoo.domain.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

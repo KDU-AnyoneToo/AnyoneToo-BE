@@ -36,6 +36,6 @@ public class Product extends BaseEntity {
     @OneToMany(mappedBy = "product")
     private List<Purchase> purchases = new ArrayList<>();
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 }

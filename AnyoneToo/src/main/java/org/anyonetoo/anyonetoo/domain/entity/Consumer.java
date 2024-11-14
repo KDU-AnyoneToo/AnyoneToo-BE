@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.anyonetoo.anyonetoo.domain.mapping.ConsumerPrefer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,9 +30,9 @@ public class Consumer extends BaseEntity {
     @Column(nullable = false)
     private Integer age;
 
-    @OneToMany(mappedBy = "consumer")
+    @OneToMany(mappedBy = "consumer", orphanRemoval = true)
     private List<Purchase> purchases = new ArrayList<>();
 
-    @OneToMany(mappedBy = "consumer")
+    @OneToMany(mappedBy = "consumer", orphanRemoval = true)
     private List<ConsumerPrefer> consumerPrefers = new ArrayList<>();
 }

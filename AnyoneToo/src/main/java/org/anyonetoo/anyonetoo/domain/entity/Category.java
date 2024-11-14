@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.anyonetoo.anyonetoo.domain.mapping.ConsumerPrefer;
+import org.anyonetoo.anyonetoo.domain.mapping.SellerPrefer;
 
 import java.util.ArrayList;
 import java.util.List;
