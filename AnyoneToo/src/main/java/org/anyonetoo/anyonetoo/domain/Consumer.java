@@ -7,28 +7,56 @@ import org.anyonetoo.anyonetoo.domain.mapping.ConsumerPrefer;
 
 import java.util.List;
 
+//@Getter
+//@Entity
+//@Builder
+//@Setter
+//@NoArgsConstructor(access = AccessLevel.PROTECTED)
+//@AllArgsConstructor
+//public class Consumer extends BaseEntity {
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @Column(name = "consumer_id")
+//    private Long consumer_id;
+//
+//    private String id;
+//    private String password;
+//    private String name;
+//    private Long age;
+//
+//    @OneToMany(mappedBy = "consumer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    private List<Purchase> purchases;
+//
+//    @OneToMany(mappedBy = "consumer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    private List<ConsumerPrefer> consumerPrefers;
+//
+//
+//}
+
 @Getter
-@Entity
-@Builder
 @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@Entity
+@NoArgsConstructor
 @AllArgsConstructor
-public class Consumer extends BaseEntity {
+@Builder
+public class Consumer {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "consumer_id")
-    private Long consumer_id;
+    private Long id;
 
-    private String id;
-    private String password;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+
     private String name;
     private Long age;
 
     @OneToMany(mappedBy = "consumer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<Purchase> purchases;
-
+//
     @OneToMany(mappedBy = "consumer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<ConsumerPrefer> consumerPrefers;
-
-
+//
 }
